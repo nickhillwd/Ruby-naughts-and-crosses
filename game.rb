@@ -32,6 +32,8 @@ class Game
   def restart
     @board = [ [nil, nil, nil],[nil, nil, nil],[nil, nil, nil] ]
     @turn = 0
+    @pieces.rotate!
+    puts self.display_board
   end
 
     private

@@ -22,8 +22,6 @@ binding.pry;''
 
 #fix extra array length
 
-
-
 #rotate players/starting piece when setting
 
 #once board is full auto reset and tell user it's a draw
