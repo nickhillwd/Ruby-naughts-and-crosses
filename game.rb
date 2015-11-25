@@ -5,6 +5,8 @@ class Game
     @pieces = [:o, :x]
     @turn = 0
     @win_checker = win_checker
+    @win_count_o = 0
+    @win_count_x = 0
   end
 
   def place_piece(row, column)
@@ -32,9 +34,21 @@ class Game
     check_for_win
   end
 
+  def win_count(current_piece)
+    if current_piece == :o
+      @win_count_o += 1
+      puts "win count for Os is: #{@win_count_o}"
+    elsif
+      current_piece == :x
+      @win_count_x += 1
+      puts "win count for Xs is: #{@win_count_x}"
+    end
+  end
+
   def check_for_win
     if @win_checker.has_won?(current_piece, @board)
       puts "winner is #{current_piece}"
+      win_count(current_piece)
       restart
     elsif full_board?
       puts "board full play again"

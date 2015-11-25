@@ -32,7 +32,42 @@ puts game.display_board
 
 #keep a scoresheet for the number of wins for noughts and crosses
 
+game.turn(0,0)
+    game.turn(1,0)
+    game.turn(0,1)
+    game.turn(1,1)
+    puts "\n"
+    puts "-------------------------------------------------------"
+    puts "\n"
+    game.turn(0,2)
+
+    puts "\n"
+    puts "-------------------------------------------------------"
+    puts "\n"
+
+    game.turn(0,0)
+    game.turn(0,1)
+    game.turn(1,0)
+    game.turn(0,2)
+    puts "\n"
+    puts "-------------------------------------------------------"
+    puts "\n"
+    game.turn(2,0)
+
+    puts "\n"
+    puts "-------------------------------------------------------"
+    puts "\n"
+
+    game.turn(0,0)
+    game.turn(0,1)
+    game.turn(1,1)
+    game.turn(0,2)
+    puts "\n"
+    puts "-------------------------------------------------------"
+    puts "\n"
+    game.turn(2,2)
+
 #create a computer player tomplay against
 
-binding.pry;''
+#binding.pry;''
 
