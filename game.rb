@@ -21,7 +21,7 @@ class Game
     @turn = @turn + 1
     puts self.display_board
 
-    if board_full?
+    if full_board?
       puts "Board full, play again."
       restart
     end

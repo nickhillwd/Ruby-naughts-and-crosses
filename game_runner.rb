@@ -28,7 +28,7 @@ binding.pry;''
 
 #lunch
 
-#auto detect is played has wone 3 in a row
+#auto detect is played has won 3 in a row
 
 
 
