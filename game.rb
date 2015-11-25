@@ -42,6 +42,21 @@ class Game
     puts self.display_board
   end
 
+  def has_won?(symbol)
+    horizontal_line?(symbol)
+  end
+
+  def horizontal_line?(symbol)
+    @board.any? do |row|
+      row_has_winning_line?(row, symbol)
+    end
+  end
+
+  def row_has_winning_line?(row, symbol)
+    row.all? do |square|
+      square == symbol
+    end
+  end
 
     private
 

@@ -18,8 +18,6 @@ puts game.display_board
 
 #game.restart
 
-binding.pry;''
-
 #fix extra array length
 
 #rotate players/starting piece when setting
@@ -30,14 +28,16 @@ binding.pry;''
 
 #auto detect is played has won 3 in a row
 
+piece = :o
 
+game.place_piece(0,0)
+game.place_piece(1,0)
+game.place_piece(0,1)
+game.place_piece(1,1)
+puts "-------------------------------------------------------"
+puts "\n"
+game.place_piece(0,2)
 
+puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
 
-
-
-
-
-
-
-
-
+binding.pry;''
