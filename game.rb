@@ -18,14 +18,30 @@ class Game
       return
     end
     @board[ row ][ column ] = @pieces[ @turn % 2 ]
-    @turn = @turn + 1
     puts self.display_board
+  end
 
-    if full_board?
-      puts "Board full, play again."
+
+
+  def current_piece
+    @pieces[ @turn % 2]
+  end
+
+  def turn(row, column)
+    place_piece(row, column)
+    display_board
+    check_for_win
+    @turn = @turn + 1
+  end
+
+  def check_for_win
+    if has_won?(current_piece)
+      puts "winner is #{current_piece}"
+      restart
+    elsif full_board?
+      puts "board full play again"
       restart
     end
-
   end
 
   def display_board
@@ -44,7 +60,8 @@ class Game
 
   def has_won?(symbol)
     horizontal_line?(symbol, @board) ||
-    vertical_line?(symbol)
+    vertical_line?(symbol) ||
+    diagonal_line?(symbol)
   end
 
   def horizontal_line?(symbol, board)
@@ -64,6 +81,13 @@ class Game
     horizontal_line?(symbol, vertical_board)
   end
 
+  def diagonal_line?(symbol)
+    middle_piece = @board[1][1]
+    return false if middle_piece != symbol
+    top_left_and_bottom_right = @board[0][0]==symbol && @board [2][2]==symbol
+    top_right_and_bottom_left = @board[0][2]==symbol && @board [2][0]==symbol
+    top_left_and_bottom_right || top_right_and_bottom_left
+  end
 
     private
 

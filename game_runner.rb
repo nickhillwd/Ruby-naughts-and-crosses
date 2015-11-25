@@ -5,7 +5,7 @@ require_relative('game.rb')
 game = Game.new()
 
 #place piece
-#game.place_piece(0,0)
+#game.turn(0,0)
 
 #display board
 puts game.display_board
@@ -28,46 +28,57 @@ puts game.display_board
 
 #auto detect is played has won 3 in a row
 
-piece = :o
-puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
+# piece = :o
+# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
+# puts "-------------------------------------------------------"
 
-game.place_piece(0,0)
-game.place_piece(1,0)
-game.place_piece(0,1)
-game.place_piece(1,1)
-puts "-------------------------------------------------------"
-puts "\n"
-game.place_piece(0,2)
-
-puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
-
-game.restart
-
-piece = :x
-puts "Checking if game has won #{game.has_won?(piece)}. expect to be false"
-
-game.place_piece(0,0)
-game.place_piece(0,1)
-game.place_piece(1,0)
-game.place_piece(0,2)
-puts "-------------------------------------------------------"
-puts "\n"
-game.place_piece(2,0)
-
-puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
-
-# game.restart
-
-# game.place_piece(0,0)
-# game.place_piece(0,1)
-# game.place_piece(1,1)
-# game.place_piece(0,2)
+# game.turn(0,0)
+# game.turn(1,0)
+# game.turn(0,1)
+# game.turn(1,1)
+# puts "\n"
 # puts "-------------------------------------------------------"
 # puts "\n"
-# game.place_piece(2,2)
+# game.turn(0,2)
 
 # puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
+# puts "-------------------------------------------------------"
 
+# game.restart
+# piece = :x
+
+# puts "Checking if game has won #{game.has_won?(piece)}. expect to be false"
+# puts "-------------------------------------------------------"
+
+# game.turn(0,0)
+# game.turn(0,1)
+# game.turn(1,0)
+# game.turn(0,2)
+# puts "\n"
+# puts "-------------------------------------------------------"
+# puts "\n"
+# game.turn(2,0)
+
+# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
+# puts "-------------------------------------------------------"
+
+# game.restart
+# # piece = :o
+
+# puts "Checking if game has won #{game.has_won?(piece)}. expect to be false"
+# puts "-------------------------------------------------------"
+
+game.turn(0,0)
+game.turn(0,1)
+game.turn(1,1)
+game.turn(0,2)
+puts "\n"
+puts "-------------------------------------------------------"
+puts "\n"
+game.turn(2,2)
+
+# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
+# puts "-------------------------------------------------------"
 
 binding.pry;''
 
