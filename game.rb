@@ -7,12 +7,19 @@ class Game
   end
 
   def place_piece(row, column)
+    if row > 2 || column > 2
+      puts "No silly, play in the board"
+      puts self.display_board
+      return
+    end
     if @board[ row ][ column ]
       puts "Already occupies, cannot play there"
+      puts self.display_board
       return
     end
     @board[ row ][ column ] = @pieces[ @turn % 2 ]
     @turn = @turn + 1
+    puts self.display_board
   end
 
   def display_board
