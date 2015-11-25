@@ -1,8 +1,10 @@
 require('pry-byebug')
 require_relative('game.rb')
+require_relative('win_checker.rb')
 
 #create game
-game = Game.new()
+win_checker_1 = WinChecker.new
+game = Game.new(win_checker_1)
 
 #place piece
 #game.turn(0,0)
