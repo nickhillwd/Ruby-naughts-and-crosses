@@ -11,18 +11,22 @@ class Game
     @turn = @turn + 1
   end
 
-  def row_to_string(row)
-    row_symbols = row.map do |piece|
-      piece || " "
-    end
-    row_symbols.join("|")
-  end
+
 
   def display_board
-    rows_as_string = @board.map do |row|
+    row_strings = @board.map do |row|
       row_to_string(row)
     end
-    rows_as_string.join("\n______\n")
+    row_strings.join("\n______\n")
   end
 
+    private
+
+    def row_to_string(row)
+      row_symbols = row.map do |piece|
+        piece || " "
+      end
+      row_symbols.join("|")
+    end
+    
 end

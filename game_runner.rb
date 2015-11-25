@@ -11,8 +11,8 @@ game.place_piece(0,0)
 puts game.display_board
 
 #test display row
-puts "test row #{game.row_to_string([:o,nil,nil])}"
-
+#puts "test row #{game.row_to_string([:o,nil,nil])}"
+#removed so it cannot be called from outside the function - moved to private
 
 #binding.pry;''
 
