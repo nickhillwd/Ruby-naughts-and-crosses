@@ -26,61 +26,13 @@ puts game.display_board
 
 #once board is full auto reset and tell user it's a draw
 
-#lunch
+#auto detect if player has won 3 in a row
 
-#auto detect is played has won 3 in a row
+#Create a new class to do the win checking using a new method
 
-# piece = :o
-# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
-# puts "-------------------------------------------------------"
+#keep a scoresheet for the number of wins for noughts and crosses
 
-# game.turn(0,0)
-# game.turn(1,0)
-# game.turn(0,1)
-# game.turn(1,1)
-# puts "\n"
-# puts "-------------------------------------------------------"
-# puts "\n"
-# game.turn(0,2)
-
-# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
-# puts "-------------------------------------------------------"
-
-# game.restart
-# piece = :x
-
-# puts "Checking if game has won #{game.has_won?(piece)}. expect to be false"
-# puts "-------------------------------------------------------"
-
-# game.turn(0,0)
-# game.turn(0,1)
-# game.turn(1,0)
-# game.turn(0,2)
-# puts "\n"
-# puts "-------------------------------------------------------"
-# puts "\n"
-# game.turn(2,0)
-
-# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
-# puts "-------------------------------------------------------"
-
-# game.restart
-# # piece = :o
-
-# puts "Checking if game has won #{game.has_won?(piece)}. expect to be false"
-# puts "-------------------------------------------------------"
-
-game.turn(0,0)
-game.turn(0,1)
-game.turn(1,1)
-game.turn(0,2)
-puts "\n"
-puts "-------------------------------------------------------"
-puts "\n"
-game.turn(2,2)
-
-# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
-# puts "-------------------------------------------------------"
+#create a computer player tomplay against
 
 binding.pry;''
 
