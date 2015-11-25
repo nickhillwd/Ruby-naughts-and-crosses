@@ -43,11 +43,12 @@ class Game
   end
 
   def has_won?(symbol)
-    horizontal_line?(symbol)
+    horizontal_line?(symbol, @board) ||
+    vertical_line?(symbol)
   end
 
-  def horizontal_line?(symbol)
-    @board.any? do |row|
+  def horizontal_line?(symbol, board)
+    board.any? do |row|
       row_has_winning_line?(row, symbol)
     end
   end
@@ -57,6 +58,12 @@ class Game
       square == symbol
     end
   end
+
+  def vertical_line?(symbol)
+    vertical_board = @board.transpose
+    horizontal_line?(symbol, vertical_board)
+  end
+
 
     private
 

@@ -29,6 +29,7 @@ puts game.display_board
 #auto detect is played has won 3 in a row
 
 piece = :o
+puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
 
 game.place_piece(0,0)
 game.place_piece(1,0)
@@ -40,4 +41,33 @@ game.place_piece(0,2)
 
 puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
 
+game.restart
+
+piece = :x
+puts "Checking if game has won #{game.has_won?(piece)}. expect to be false"
+
+game.place_piece(0,0)
+game.place_piece(0,1)
+game.place_piece(1,0)
+game.place_piece(0,2)
+puts "-------------------------------------------------------"
+puts "\n"
+game.place_piece(2,0)
+
+puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
+
+# game.restart
+
+# game.place_piece(0,0)
+# game.place_piece(0,1)
+# game.place_piece(1,1)
+# game.place_piece(0,2)
+# puts "-------------------------------------------------------"
+# puts "\n"
+# game.place_piece(2,2)
+
+# puts "Checking if game has won #{game.has_won?(piece)}. expect to be true"
+
+
 binding.pry;''
+
